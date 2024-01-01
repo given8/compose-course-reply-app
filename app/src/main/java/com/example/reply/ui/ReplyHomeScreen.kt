@@ -81,6 +81,7 @@ fun ReplyHomeScreen(
             text = stringResource(id = R.string.tab_spam)
         )
     )
+    if (replyUiState.isShowingHomepage){
     ReplyAppContent(
         replyUiState = replyUiState,
         onTabPressed = onTabPressed,
@@ -88,6 +89,9 @@ fun ReplyHomeScreen(
         navigationItemContentList = navigationItemContentList,
         modifier = modifier
     )
+    }else{
+        ReplyDetailsScreen(replyUiState = replyUiState, onBackPressed = onDetailScreenBackPressed)
+    }
 }
 
 @Composable
@@ -115,7 +119,8 @@ private fun ReplyAppContent(
             ReplyListOnlyContent(
                 replyUiState = replyUiState,
                 onEmailCardPressed = onEmailCardPressed,
-                modifier = Modifier.weight(1f)
+                modifier = Modifier
+                    .weight(1f)
                     .padding(
                         horizontal = dimensionResource(R.dimen.email_list_only_horizontal_padding)
                     )
