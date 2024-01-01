@@ -32,14 +32,12 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             ReplyTheme {
                 Surface {
-                    val windowSize = calculateWindowSizeClass(this)
-
+                    val windowSize = calculateWindowSizeClass(activity = this)
                     ReplyApp(
-                        windowSize = windowSize.widthSizeClass,
+                        windowSize = windowSize.widthSizeClass
                     )
                 }
             }
@@ -52,33 +50,7 @@ class MainActivity : ComponentActivity() {
 fun ReplyAppCompactPreview() {
     ReplyTheme {
         Surface {
-            ReplyApp(
-                windowSize = WindowWidthSizeClass.Compact,
-            )
-        }
-    }
-}
-
-@Preview(showBackground = true, widthDp = 700)
-@Composable
-fun ReplyAppMediumPreview() {
-    ReplyTheme {
-        Surface {
-            ReplyApp(
-                windowSize = WindowWidthSizeClass.Medium,
-            )
-        }
-    }
-}
-
-@Preview(showBackground = true, widthDp = 1000)
-@Composable
-fun ReplyAppExpandedPreview() {
-    ReplyTheme {
-        Surface {
-            ReplyApp(
-                windowSize = WindowWidthSizeClass.Expanded,
-            )
+            ReplyApp(windowSize = WindowWidthSizeClass.Compact)
         }
     }
 }
