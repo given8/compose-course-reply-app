@@ -29,17 +29,14 @@ import com.example.reply.ui.theme.ReplyTheme
 
 class MainActivity : ComponentActivity() {
 
-    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
             ReplyTheme {
                 Surface {
-                    val windowSize = calculateWindowSizeClass(this)
-
+                    val windowSize = calculateWindowSizeClass(activity = this)
                     ReplyApp(
-                        windowSize = windowSize.widthSizeClass,
+                        windowSize = windowSize.widthSizeClass
                     )
                 }
             }
@@ -52,9 +49,7 @@ class MainActivity : ComponentActivity() {
 fun ReplyAppCompactPreview() {
     ReplyTheme {
         Surface {
-            ReplyApp(
-                windowSize = WindowWidthSizeClass.Compact,
-            )
+            ReplyApp(windowSize = WindowWidthSizeClass.Compact)
         }
     }
 }
