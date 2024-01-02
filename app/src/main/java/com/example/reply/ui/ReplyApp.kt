@@ -15,13 +15,16 @@
  */
 package com.example.reply.ui
 
+import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.reply.data.Email
 import com.example.reply.data.MailboxType
+import com.example.reply.ui.theme.ReplyTheme
 import com.example.reply.ui.utils.ReplyNavigationType
 
 @Composable
@@ -64,4 +67,34 @@ fun ReplyApp(
         },
         modifier = modifier
     )
+}
+
+@Preview(showBackground = true, widthDp = 700)
+@Composable
+fun MediumAppPreview(){
+    ReplyTheme {
+        Surface {
+            ReplyApp(windowSize = WindowWidthSizeClass.Medium)
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 1080)
+@Composable
+fun ExpandedAppPreview(){
+    ReplyTheme {
+        Surface {
+            ReplyApp(windowSize = WindowWidthSizeClass.Expanded)
+        }
+    }
+}
+
+@Preview(showBackground = true, widthDp = 600)
+@Composable
+fun CompactAppPreview(){
+    ReplyTheme {
+        Surface {
+            ReplyApp(windowSize = WindowWidthSizeClass.Compact)
+        }
+    }
 }
