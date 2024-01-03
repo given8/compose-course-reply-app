@@ -190,6 +190,7 @@ private fun ReplyAppContent(
                         navigationItemContentList = navigationItemContentList,
                         modifier = Modifier
                             .fillMaxWidth()
+                            .testTag(stringResource(id = R.string.navigation_bottom))
                     )
                 }
             }
