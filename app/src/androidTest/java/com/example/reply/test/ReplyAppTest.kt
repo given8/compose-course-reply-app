@@ -32,4 +32,12 @@ class ReplyAppTest {
         }
         composeTestRule.onNodeWithTagForStringId(com.example.reply.R.string.navigation_rail).assertExists()
     }
+
+    @Test
+    fun expandedDevice_verifyUsingPermanentDrawer(){
+        composeTestRule.setContent {
+            ReplyApp(windowSize = WindowWidthSizeClass.Expanded)
+        }
+        composeTestRule.onNodeWithTagForStringId(com.example.reply.R.string.navigation_drawer)
+    }
 }
