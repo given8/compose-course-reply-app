@@ -29,6 +29,7 @@ import com.example.reply.ui.theme.ReplyTheme
 
 class MainActivity : ComponentActivity() {
 
+    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
