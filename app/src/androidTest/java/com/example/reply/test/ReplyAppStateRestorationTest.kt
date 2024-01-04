@@ -19,6 +19,7 @@ class ReplyAppStateRestorationTest {
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
     @Test
+    @TestCompactWidth
     fun compactScreen_selectedEmailEmailRetained_afterConfigChange(){
         val stateRestorationTester = StateRestorationTester(composeTestRule)
         stateRestorationTester.setContent {

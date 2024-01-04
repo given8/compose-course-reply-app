@@ -18,6 +18,7 @@ class ReplyAppTest {
 
 
     @Test
+    @TestCompactWidth
     fun compactDevice_verifyUsingBottomNavigation(){
         composeTestRule.setContent {
             ReplyApp(windowSize = WindowWidthSizeClass.Compact)
@@ -26,6 +27,7 @@ class ReplyAppTest {
     }
 
     @Test
+    @TestMediumWidth
     fun mediumDevice_verifyUsingNavigationRail(){
         composeTestRule.setContent {
             ReplyApp(windowSize = WindowWidthSizeClass.Medium)
@@ -34,6 +36,7 @@ class ReplyAppTest {
     }
 
     @Test
+    @TestExpandedWidth
     fun expandedDevice_verifyUsingPermanentDrawer(){
         composeTestRule.setContent {
             ReplyApp(windowSize = WindowWidthSizeClass.Expanded)
